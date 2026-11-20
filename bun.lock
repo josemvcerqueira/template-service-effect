@@ -10,7 +10,7 @@
       },
       "devDependencies": {
         "@effect/language-service": "0.87.5",
-        "@interest-protocol/standards": "github:josemvcerqueira/standards#v0.4.0",
+        "@interest-protocol/standards": "github:josemvcerqueira/standards#v0.4.1",
         "@types/bun": "^1.4.4",
         "eslint-plugin-sonarjs": "^4.2.2",
         "knip": "^6.46.1",
@@ -63,7 +63,7 @@
 
     "@humanwhocodes/retry": ["@humanwhocodes/retry@0.4.3", "", {}, "sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ=="],
 
-    "@interest-protocol/standards": ["@interest-protocol/standards@github:josemvcerqueira/standards#cc55168", { "peerDependencies": { "eslint-plugin-sonarjs": "^4.2.2", "oxfmt": "^0.79.0", "oxlint": "^1.94.0", "oxlint-plugin-eslint": "^1.94.0" }, "bin": { "ip-standards-verify": "./bin/verify.mjs" } }, "josemvcerqueira-standards-cc55168", "sha512-MBV+xF61geBvE233EMjcvWvVtgAQySkHqJcJJLZB+t8IaI/cltNi71yaitpJW9QCY9A96KaJstit31FXg1DtTw=="],
+    "@interest-protocol/standards": ["@interest-protocol/standards@github:josemvcerqueira/standards#671b628", { "peerDependencies": { "eslint-plugin-sonarjs": "^4.2.2", "oxfmt": "^0.79.0", "oxlint": "^1.94.0", "oxlint-plugin-eslint": "^1.94.0" }, "bin": { "ip-standards-verify": "./bin/verify.mjs" } }, "josemvcerqueira-standards-671b628", "sha512-vfiaOnMS/F1Zc7jB+EnDK3WQTJhINpVGSw3HKwizDwq5aTDQHxWCoMvs7JYAHsu4FVJulXxDBW+QBxOTxZkvhw=="],
 
     "@isaacs/nonrecursive-glob-match": ["@isaacs/nonrecursive-glob-match@1.1.0", "", {}, "sha512-GPm/Dbvk5RLmhRnxXIa7nTpK0xtl4E0wj0MslsuNiJ1FIROU+2+9lgUC/dgF7Ey4QCWhfEsgxilMRMCdHPfDfw=="],
 
