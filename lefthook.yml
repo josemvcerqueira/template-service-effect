@@ -1,0 +1,22 @@
+assert_lefthook_installed: true
+# why: commits and pushes fail on the same rules as the gate. Never use --no-verify; CI runs the gate anyway.
+pre-commit:
+  parallel: true
+  jobs:
+    - name: standard
+      run: bunx ip-standards-verify
+    - name: oxfmt
+      run: bunx oxfmt --check --no-error-on-unmatched-pattern {staged_files}
+    - name: oxlint
+      glob: "*.{ts,tsx,js,mjs}"
+      run: bunx oxlint --deny-warnings src
+    - name: tsc
+      glob: "*.{ts,tsx}"
+      run: bunx tsc
+    - name: effect diagnostics
+      glob: "*.ts"
+      run: bunx effect-language-service diagnostics --project tsconfig.json
+pre-push:
+  jobs:
+    - name: gate
+      run: bash scripts/gate.sh

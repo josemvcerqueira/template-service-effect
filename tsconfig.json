@@ -1,0 +1,11 @@
+{
+  "extends": "@interest-protocol/standards/tsconfig.effect.json",
+  "compilerOptions": {
+    "types": ["bun"],
+    "allowImportingTsExtensions": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src"]
+}
