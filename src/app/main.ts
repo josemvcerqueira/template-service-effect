@@ -16,12 +16,13 @@ const ApiRoutes = HttpApiBuilder.layer(Api, { openapiPath: "/openapi.json" }).pi
   Layer.provide([HealthHandlers, PricesHandlers.pipe(Layer.provide(Prices.layer))]),
 );
 
-const Routes = Layer.mergeAll(ApiRoutes, HttpApiScalar.layer(Api, { path: "/docs" }));
+const DocsRoutes = HttpApiScalar.layerCdn(Api, { path: "/docs", version: "1.43.5" });
 
 const Main = Layer.unwrap(
   Effect.gen(function* () {
-    const { hostname, port, logLevel } = yield* AppConfig;
-    return HttpRouter.serve(Routes).pipe(
+    const { hostname, port, logLevel, docsEnabled } = yield* AppConfig;
+    const routes = docsEnabled ? Layer.mergeAll(ApiRoutes, DocsRoutes) : ApiRoutes;
+    return HttpRouter.serve(routes).pipe(
       Layer.provide(serverLayer({ hostname, port })),
       Layer.provide(logLayer(logLevel)),
     );
